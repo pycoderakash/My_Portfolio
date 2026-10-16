@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 375" width="100%" height="100%" role="img" aria-labelledby="projPlhTitle projPlhDesc">
+  <title id="projPlhTitle">Project Overview Graphic</title>
+  <desc id="projPlhDesc">Abstract illustration of an accessible web application interface with responsive layout and code brackets.</desc>
+  <defs>
+    <linearGradient id="bgGradP" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="winGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="375" fill="url(#bgGradP)" />
+  <!-- Browser window frame -->
+  <rect x="40" y="30" width="520" height="315" rx="10" fill="url(#winGrad)" stroke="#475569" stroke-width="2" />
+  <!-- Window header dots -->
+  <circle cx="65" cy="50" r="5" fill="#ef4444" />
+  <circle cx="82" cy="50" r="5" fill="#f59e0b" />
+  <circle cx="99" cy="50" r="5" fill="#10b981" />
+  <rect x="130" y="42" width="280" height="16" rx="4" fill="#0f172a" opacity="0.6" />
+  <!-- Content mock -->
+  <rect x="65" y="80" width="140" height="240" rx="6" fill="#0f172a" />
+  <rect x="80" y="100" width="110" height="12" rx="3" fill="#38bdf8" />
+  <rect x="80" y="125" width="85" height="8" rx="2" fill="#64748b" />
+  <rect x="80" y="145" width="95" height="8" rx="2" fill="#64748b" />
+  <rect x="80" y="165" width="70" height="8" rx="2" fill="#64748b" />
+
+  <!-- Main viewport content -->
+  <rect x="225" y="80" width="310" height="130" rx="6" fill="#0f172a" />
+  <text x="250" y="130" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="20" font-weight="700">&lt;semantic-ui&gt;</text>
+  <text x="250" y="165" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="14">WCAG 2.2 AA Engineered Architecture</text>
+
+  <rect x="225" y="225" width="145" height="95" rx="6" fill="#0f172a" />
+  <rect x="390" y="225" width="145" height="95" rx="6" fill="#0f172a" />
+  <circle cx="297" cy="265" r="20" fill="#0284c7" opacity="0.2" />
+  <circle cx="462" cy="265" r="20" fill="#10b981" opacity="0.2" />
+</svg>

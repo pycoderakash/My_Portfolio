@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Akash Rai | Student Developer Inquiries</title>
+  <meta name="description" content="Get in touch with Akash Rai for software development inquiries, technical collaboration, or academic discussions.">
+  <meta name="author" content="Akash Rai">
+
+  <!-- Open Graph / Social Metadata -->
+  <meta property="og:title" content="Contact Akash Rai | Student Developer Inquiries">
+  <meta property="og:description" content="Reach out to discuss software development projects, technical collaboration, or academic ideas.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/Akash_rai.jpeg">
+
+  <!-- Twitter Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact Akash Rai | Student Developer">
+  <meta name="twitter:description" content="Accessible contact form for software development inquiries and collaborations.">
+  <meta name="twitter:image" content="assets/images/Akash_rai.jpeg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/icons/logo.jpeg">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Structured Data: JSON-LD ContactPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Akash Rai",
+    "description": "Accessible contact form and direct communication channels for Akash Rai.",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Akash Rai",
+      "jobTitle": "Student Developer",
+      "email": "mailto:akashrai34558@gmail.com",
+      "sameAs": [
+        "https://github.com/pycoderakash",
+        "https://www.linkedin.com/in/akash-rai-3927593b9"
+      ],
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Chhattisgarh Swami Vivekanand Technical University (CSVTU), Bhilai"
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Site Header Landmark -->
+  <header class="site-header">
+    <div class="container site-header__container">
+      <a href="index.html" class="site-brand" aria-label="Akash Rai Portfolio, Home">
+        <img src="assets/icons/logo.jpeg" alt="" class="site-logo site-brand__logo" width="42" height="42">
+        <span class="site-brand__info">
+          <span class="brand-name">Akash Rai</span>
+          <span class="brand-role">Student Developer</span>
+        </span>
+      </a>
+
+      <div class="header-actions">
+        <!-- Theme Toggle Button -->
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Switch to dark theme (currently light)">
+          <svg class="theme-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18">
+            <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z" fill="currentColor"/>
+          </svg>
+          <span class="theme-toggle__text">Dark Mode</span>
+        </button>
+
+        <!-- Responsive Mobile Navigation Toggle -->
+        <button type="button" id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation menu">
+          <svg class="menu-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
+            <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" fill="currentColor"/>
+          </svg>
+          <span>Menu</span>
+        </button>
+      </div>
+
+      <!-- Primary Navigation Landmark -->
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary Navigation">
+        <ul class="primary-nav__list">
+          <li><a href="index.html" class="primary-nav__link">Home</a></li>
+          <li><a href="about.html" class="primary-nav__link">About</a></li>
+          <li><a href="skills.html" class="primary-nav__link">Skills</a></li>
+          <li><a href="projects.html" class="primary-nav__link">Projects</a></li>
+          <li><a href="contact.html" class="primary-nav__link" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Primary Main Landmark -->
+  <main id="main-content" tabindex="-1">
+    <div class="container section">
+      <header class="section-header">
+        <h1>Contact &amp; Connect</h1>
+        <p class="lead-text">
+          Have a question about my projects, a potential collaboration, or technical ideas? Send a message below or use the communication channels.
+        </p>
+      </header>
+
+      <div class="contact-layout">
+        <!-- Form Column -->
+        <div class="form-wrapper">
+          <!-- Live Status Region for Status Messages -->
+          <div id="form-status" class="form-status" role="status" aria-live="polite" tabindex="-1"></div>
+
+          <form id="contact-form" class="contact-form" action="https://formsubmit.co/akashrai34558@gmail.com" method="POST" novalidate>
+            <!-- FormSubmit Email Delivery Configuration -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_autoresponse" value="Thank you for reaching out to Akash Rai! I have received your message and will respond as soon as possible.">
+
+            <fieldset class="form-fieldset">
+              <legend class="form-legend">Send a Direct Message</legend>
+
+              <!-- 1. Full Name Field -->
+              <div class="form-group">
+                <label for="user-name" class="form-label">
+                  Full Name
+                  <span class="form-label__required" aria-hidden="true">*</span>
+                  <span class="sr-only">(required)</span>
+                </label>
+                <span id="user-name-hint" class="form-hint">Please enter your first and last name.</span>
+                <input
+                  type="text"
+                  id="user-name"
+                  name="name"
+                  class="form-input"
+                  required
+                  aria-required="true"
+                  autocomplete="name"
+                  aria-describedby="user-name-hint user-name-error"
+                >
+                <span id="user-name-error" class="form-error" aria-live="polite"></span>
+              </div>
+
+              <!-- 2. Email Address Field -->
+              <div class="form-group">
+                <label for="user-email" class="form-label">
+                  Email Address
+                  <span class="form-label__required" aria-hidden="true">*</span>
+                  <span class="sr-only">(required)</span>
+                </label>
+                <span id="user-email-hint" class="form-hint">Your email for reply purposes. Example: name@example.com</span>
+                <input
+                  type="email"
+                  id="user-email"
+                  name="email"
+                  class="form-input"
+                  required
+                  aria-required="true"
+                  autocomplete="email"
+                  aria-describedby="user-email-hint user-email-error"
+                >
+                <span id="user-email-error" class="form-error" aria-live="polite"></span>
+              </div>
+
+              <!-- 3. Subject Field -->
+              <div class="form-group">
+                <label for="user-subject" class="form-label">
+                  Subject
+                  <span class="form-label__required" aria-hidden="true">*</span>
+                  <span class="sr-only">(required)</span>
+                </label>
+                <span id="user-subject-hint" class="form-hint">Brief summary of your inquiry (e.g., Project Feedback, Collaboration).</span>
+                <input
+                  type="text"
+                  id="user-subject"
+                  name="subject"
+                  class="form-input"
+                  required
+                  aria-required="true"
+                  aria-describedby="user-subject-hint user-subject-error"
+                >
+                <span id="user-subject-error" class="form-error" aria-live="polite"></span>
+              </div>
+
+              <!-- 4. Message Field -->
+              <div class="form-group">
+                <label for="user-message" class="form-label">
+                  Message
+                  <span class="form-label__required" aria-hidden="true">*</span>
+                  <span class="sr-only">(required)</span>
+                </label>
+                <span id="user-message-hint" class="form-hint">Provide details regarding your inquiry (minimum 10 characters).</span>
+                <textarea
+                  id="user-message"
+                  name="message"
+                  class="form-textarea"
+                  required
+                  aria-required="true"
+                  rows="6"
+                  aria-describedby="user-message-hint user-message-error"
+                ></textarea>
+                <span id="user-message-error" class="form-error" aria-live="polite"></span>
+              </div>
+            </fieldset>
+
+            <div class="btn-group">
+              <button type="submit" class="btn btn--primary" id="submit-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                  <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                </svg>
+                Send Message
+              </button>
+              <button type="reset" class="btn btn--secondary">Reset Form</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Sidebar Column: Direct Contact Info & Backend Notice -->
+        <aside class="contact-sidebar" aria-labelledby="contact-details-heading">
+          <div class="contact-info-card">
+            <h2 id="contact-details-heading" class="skills-group__title">Communication Channels</h2>
+            <address class="contact-address">
+              <div class="contact-address__item">
+                <svg class="contact-address__icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                <div>
+                  <span class="contact-address__label">Email Address</span>
+                  <p class="contact-address__val">
+                    <a href="mailto:akashrai34558@gmail.com">akashrai34558@gmail.com</a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-address__item">
+                <svg class="contact-address__icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                <div>
+                  <span class="contact-address__label">Academic Institution</span>
+                  <p class="contact-address__val">CSVTU, Bhilai, Chhattisgarh, India</p>
+                </div>
+              </div>
+
+              <div class="contact-address__item">
+                <svg class="contact-address__icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                  <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33.85 0 1.7.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/>
+                </svg>
+                <div>
+                  <span class="contact-address__label">GitHub Profile</span>
+                  <p class="contact-address__val">
+                    <a href="https://github.com/pycoderakash" target="_blank" rel="noopener noreferrer">github.com/pycoderakash <span class="sr-only">(opens in new tab)</span></a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-address__item">
+                <svg class="contact-address__icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.53 1.53 0 1 0 0-3.06 1.53 1.53 0 0 0 0 3.06m1.39 9.74v-8.37H5.07v8.37h2.78z"/>
+                </svg>
+                <div>
+                  <span class="contact-address__label">LinkedIn Profile</span>
+                  <p class="contact-address__val">
+                    <a href="https://www.linkedin.com/in/akash-rai-3927593b9" target="_blank" rel="noopener noreferrer">linkedin.com/in/akash-rai-3927593b9 <span class="sr-only">(opens in new tab)</span></a>
+                  </p>
+                </div>
+              </div>
+            </address>
+          </div>
+
+          <!-- Live Form Delivery Notice -->
+          <div class="aside-callout" style="margin-block: 0;">
+            <h3 class="aside-callout__title">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+              Direct Email Delivery
+            </h3>
+            <p>
+              This contact form is connected with live email delivery. Submissions are transmitted directly to <strong>akashrai34558@gmail.com</strong> with client-side verification so you receive authentic, prompt replies.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer Landmark -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <h3 class="site-footer__title">Akash Rai</h3>
+          <p>
+            Student Developer &bull; B.Tech in CSE (AI/ML) &bull; Chhattisgarh Swami Vivekanand Technical University (CSVTU), Bhilai.
+          </p>
+        </div>
+
+        <nav class="site-footer__nav" aria-label="Footer Quick Links">
+          <h4 class="site-footer__nav-title">Navigation</h4>
+          <ul class="site-footer__list">
+            <li><a href="index.html" class="site-footer__link">Home</a></li>
+            <li><a href="about.html" class="site-footer__link">About Me</a></li>
+            <li><a href="skills.html" class="site-footer__link">Skills</a></li>
+            <li><a href="projects.html" class="site-footer__link">Projects</a></li>
+            <li><a href="contact.html" class="site-footer__link" aria-current="page">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <h4 class="site-footer__nav-title">Connect</h4>
+          <address class="contact-address">
+            <p><a href="mailto:akashrai34558@gmail.com" class="site-footer__link">akashrai34558@gmail.com</a></p>
+            <p><a href="https://github.com/pycoderakash" class="site-footer__link" target="_blank" rel="noopener noreferrer">GitHub Profile <span class="sr-only">(opens in new tab)</span></a></p>
+            <p><a href="https://www.linkedin.com/in/akash-rai-3927593b9" class="site-footer__link" target="_blank" rel="noopener noreferrer">LinkedIn Profile <span class="sr-only">(opens in new tab)</span></a></p>
+          </address>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p>&copy; 2026 Akash Rai. Built strictly with semantic HTML5, CSS3, and vanilla JavaScript. WCAG 2.2 Level AA compliant.</p>
+        <a href="#main-content" class="back-to-top">
+          <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+          </svg>
+          Back to top
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

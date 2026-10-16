@@ -1,0 +1,7 @@
+# robots.txt for Personal Portfolio Website
+User-agent: *
+Allow: /
+
+# Sitemap Location (Update [your-domain.com] with your production domain upon deployment)
+# Example: Sitemap: https://[your-domain.com]/sitemap.xml
+Sitemap: sitemap.xml

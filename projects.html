@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genuine Projects Portfolio | Akash Rai — Student Developer</title>
+  <meta name="description" content="Explore real projects by Akash Rai, including AI Resume Analyzer, Kshamta AI (SIH 2026), Prompt Tester AI, NexusAI, and Shiksha Saathi.">
+  <meta name="author" content="Akash Rai">
+
+  <!-- Open Graph / Social Metadata -->
+  <meta property="og:title" content="Projects Portfolio | Akash Rai — Student Developer">
+  <meta property="og:description" content="Explore real projects by Akash Rai: AI Resume Analyzer, Kshamta AI, Prompt Tester AI, NexusAI, and Shiksha Saathi.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/resume-analyser-ai.png">
+
+  <!-- Twitter Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Projects Portfolio | Akash Rai">
+  <meta name="twitter:description" content="Verified technical projects across Python, AI/ML workflows, and web applications.">
+  <meta name="twitter:image" content="assets/images/resume-analyser-ai.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/icons/logo.jpeg">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Structured Data: JSON-LD CollectionPage with ItemList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Projects Portfolio | Akash Rai",
+    "description": "Verified software and learning projects by Akash Rai.",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "SoftwareApplication",
+          "position": 1,
+          "name": "AI Resume Analyzer",
+          "description": "Python and Streamlit resume parsing and skill matching application.",
+          "applicationCategory": "DeveloperApplication"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "position": 2,
+          "name": "Kshamta AI / Capacity Connect",
+          "description": "Digital learning and capacity-building portal developed for SIH 2026 problem context.",
+          "applicationCategory": "EducationalApplication"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "position": 3,
+          "name": "Prompt Tester AI",
+          "description": "React and Express application for testing prompts with Groq SDK.",
+          "applicationCategory": "DeveloperApplication"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "position": 4,
+          "name": "NexusAI",
+          "description": "Full-stack AI chatbot platform built with React 19, TypeScript, Express, Prisma ORM, and SQLite.",
+          "applicationCategory": "DeveloperApplication"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "position": 5,
+          "name": "Shiksha Saathi",
+          "description": "Privacy-focused browser-based support and resource portal.",
+          "applicationCategory": "WebApplication"
+        }
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Site Header Landmark -->
+  <header class="site-header">
+    <div class="container site-header__container">
+      <a href="index.html" class="site-brand" aria-label="Akash Rai Portfolio, Home">
+        <img src="assets/icons/logo.jpeg" alt="" class="site-logo site-brand__logo" width="42" height="42">
+        <span class="site-brand__info">
+          <span class="brand-name">Akash Rai</span>
+          <span class="brand-role">Student Developer</span>
+        </span>
+      </a>
+
+      <div class="header-actions">
+        <!-- Theme Toggle Button -->
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Switch to dark theme (currently light)">
+          <svg class="theme-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18">
+            <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z" fill="currentColor"/>
+          </svg>
+          <span class="theme-toggle__text">Dark Mode</span>
+        </button>
+
+        <!-- Responsive Mobile Navigation Toggle -->
+        <button type="button" id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation menu">
+          <svg class="menu-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
+            <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" fill="currentColor"/>
+          </svg>
+          <span>Menu</span>
+        </button>
+      </div>
+
+      <!-- Primary Navigation Landmark -->
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary Navigation">
+        <ul class="primary-nav__list">
+          <li><a href="index.html" class="primary-nav__link">Home</a></li>
+          <li><a href="about.html" class="primary-nav__link">About</a></li>
+          <li><a href="skills.html" class="primary-nav__link">Skills</a></li>
+          <li><a href="projects.html" class="primary-nav__link" aria-current="page">Projects</a></li>
+          <li><a href="contact.html" class="primary-nav__link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Primary Main Landmark -->
+  <main id="main-content" tabindex="-1">
+    <div class="container section">
+      <header class="section-header">
+        <h1>Projects Portfolio</h1>
+        <p class="lead-text">
+          A collection of genuine software projects developed during my B.Tech studies, hackathons, and self-directed learning. Each entry reflects actual implementation details, verified technologies, and clear status classifications.
+        </p>
+      </header>
+
+      <!-- Accessible Interactive Filter Toolbar -->
+      <section aria-labelledby="filter-section-heading">
+        <h2 id="filter-section-heading" class="sr-only">Filter Projects by Technical Category</h2>
+
+        <div id="project-filter-toolbar" class="filter-toolbar" role="toolbar" aria-label="Project category filter controls">
+          <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">
+            All Projects (5)
+          </button>
+          <button type="button" class="filter-btn" data-filter="python" aria-pressed="false">
+            Python &amp; Data
+          </button>
+          <button type="button" class="filter-btn" data-filter="ai-ml" aria-pressed="false">
+            AI &amp; GenAI
+          </button>
+          <button type="button" class="filter-btn" data-filter="web-apps" aria-pressed="false">
+            Web Applications
+          </button>
+          <button type="button" class="filter-btn" data-filter="backend" aria-pressed="false">
+            Backend &amp; APIs
+          </button>
+        </div>
+
+        <!-- Live Region to announce filtered result counts to screen readers -->
+        <div id="filter-live-region" class="filter-status" role="status" aria-live="polite">
+          Showing all 5 projects.
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid grid--3col" id="projects-grid">
+          <!-- PROJECT 1: AI RESUME ANALYZER -->
+          <article class="project-card" id="project-resume-analyzer" data-category="python ai-ml">
+            <figure class="project-card__figure">
+              <img src="assets/images/resume-analyser-ai.png" alt="Resume Analyser AI dashboard interface showing Enterprise Resume Screener and Talent Diagnostics" width="1024" height="488" loading="lazy">
+              <figcaption class="sr-only">Resume Analyser AI opening interface</figcaption>
+            </figure>
+            <div class="project-card__body">
+              <span class="project-card__status">
+                <span class="project-card__status-dot" aria-hidden="true"></span>
+                Implemented Prototype
+              </span>
+              <h3 class="project-card__title">AI Resume Analyzer</h3>
+              <p class="project-card__desc">
+                A Python-based resume analysis application that processes uploaded PDF documents or plain text to extract technical and soft skills, evaluate role matching scores, and identify skill gaps across multiple industry categories.
+              </p>
+              <div style="margin-block-end: var(--space-xs); font-size: var(--fs-xs); color: var(--color-text-muted);">
+                <strong>Implemented Features:</strong> PDF parsing (PyPDF2), regex keyword extraction across 9 domains (programming, web, AI/ML, databases, cloud, DevOps, security, engineering, soft skills), role scoring, and Matplotlib visualizations.
+              </div>
+              <div style="margin-block-end: var(--space-md); font-size: var(--fs-xs); color: var(--color-text-muted);">
+                <strong>Technical Note:</strong> Uses regex pattern matching and heuristic scoring; does not claim a trained machine learning classifier or official ATS certification.
+              </div>
+              <ul class="project-card__tech" aria-label="Technologies used in AI Resume Analyzer">
+                <li class="project-card__tag">Python</li>
+                <li class="project-card__tag">Streamlit</li>
+                <li class="project-card__tag">PyPDF2</li>
+                <li class="project-card__tag">Matplotlib</li>
+                <li class="project-card__tag">Regular Expressions</li>
+              </ul>
+              <div class="project-card__actions">
+                <span style="font-size: var(--fs-xs); color: var(--color-text-muted);">Local Repository Project</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: KSHAMTA AI / CAPACITY CONNECT -->
+          <article class="project-card" id="project-kshamta" data-category="backend web-apps">
+            <figure class="project-card__figure">
+              <img src="assets/images/kshamta-ai.png" alt="Capacity Connect (Kshamta AI) digital capacity building and learning management portal interface" width="1024" height="491" loading="lazy">
+              <figcaption class="sr-only">Capacity Connect (Kshamta AI) portal opening interface</figcaption>
+            </figure>
+            <div class="project-card__body">
+              <span class="project-card__status project-card__status--prototype">
+                <span class="project-card__status-dot" aria-hidden="true"></span>
+                Hackathon Prototype
+              </span>
+              <h3 class="project-card__title">Kshamta AI (Capacity Connect)</h3>
+              <p class="project-card__desc">
+                A digital learning and capacity-building management platform developed around the Smart India Hackathon 2026 problem statement (ID: 26075, MoES / IMD context) to manage continuous competency training.
+              </p>
+              <div style="margin-block-end: var(--space-xs); font-size: var(--fs-xs); color: var(--color-text-muted);">
+                <strong>Implemented Architecture:</strong> FastAPI REST endpoints with SQLAlchemy and synchronous SQLite database; role-based workflows for Trainees, Trainers, and Admins; course enrollment and MCQ assessment tracking.
+              </div>
+              <div style="margin-block-end: var(--space-md); font-size: var(--fs-xs); color: var(--color-text-muted);">
+                <strong>Security &amp; Status Note:</strong> Built for the SIH problem statement context (no official government adoption claimed). Past code audits noted key learnings on authentication checks and assessment-answer exposure mitigation.
+              </div>
+              <ul class="project-card__tech" aria-label="Technologies used in Kshamta AI">
+                <li class="project-card__tag">FastAPI</li>
+                <li class="project-card__tag">SQLAlchemy</li>
+                <li class="project-card__tag">SQLite</li>
+                <li class="project-card__tag">Pydantic</li>
+                <li class="project-card__tag">React / Vite</li>
+              </ul>
+              <div class="project-card__actions">
+                <span style="font-size: var(--fs-xs); color: var(--color-text-muted);">Hackathon Development Codebase</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: PROMPT TESTER AI -->
+          <article class="project-card" id="project-prompt-tester" data-category="ai-ml web-apps backend">
+            <figure class="project-card__figure">
+              <img src="assets/images/prompt-tester-ai.png" alt="Prompt Tester opening interface showing prompt input, example prompts, temperature slider, and model execution controls" width="1024" height="482" loading="lazy">
+              <figcaption class="sr-only">Prompt Tester AI opening interface</figcaption>
+            </figure>
+            <div class="project-card__body">
+              <span class="project-card__status">
+                <span class="project-card__status-dot" aria-hidden="true"></span>
+                Implemented Prototype
+              </span>
+              <h3 class="project-card__title">Prompt Tester AI</h3>
+              <p class="project-card__desc">
+                An application built to test generative AI prompts and generate model completions through a dedicated Node.js/Express backend that interfaces securely with the Groq SDK.
+              </p>
+              <div style="margin-block-end: var(--space-xs); font-size: var(--fs-xs); color: var(--color-text-muted);">
+                <strong>Implemented Features:</strong> React/Vite user interface for prompt input; server-side Express API shielding credentials via environment variables; Groq SDK integration for prompt execution.
+              </div>
+              <div style="margin-block-end: var(--space-md); font-size: var(--fs-xs); color: var(--color-text-muted);">
+                <strong>Technical Note:</strong> Verified provider is Groq SDK. Does not claim support for all AI models or fabricated benchmark metrics.
+              </div>
+              <ul class="project-card__tech" aria-label="Technologies used in Prompt Tester AI">
+                <li class="project-card__tag">React</li>
+                <li class="project-card__tag">Vite</li>
+                <li class="project-card__tag">Node.js</li>
+                <li class="project-card__tag">Express.js</li>
+                <li class="project-card__tag">Groq SDK</li>
+              </ul>
+              <div class="project-card__actions">
+                <span style="font-size: var(--fs-xs); color: var(--color-text-muted);">Client-Server Prototype Codebase</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 4: NEXUSAI -->
+          <article class="project-card" id="project-nexus-ai" data-category="ai-ml web-apps backend">
+            <figure class="project-card__figure">
+              <img src="assets/images/nexus-ai.png" alt="NexusAI (Prapt) conversational AI platform interface showing multi-model selection and prompt suggestions" width="1024" height="479" loading="lazy">
+              <figcaption class="sr-only">NexusAI (Prapt) conversational AI platform opening interface</figcaption>
+            </figure>
+            <div class="project-card__body">
+              <span class="project-card__status">
+                <span class="project-card__status-dot" aria-hidden="true"></span>
+                Implemented Full-Stack Platform
+              </span>
+              <h3 class="project-card__title">NexusAI</h3>
+              <p class="project-card__desc">
+                A full-stack, multi-model AI chatbot platform featuring real-time conversational streaming, Markdown syntax highlighting, LaTeX mathematical formulas, and vector document processing.
+              </p>
+              <div style="margin-block-end: var(--space-xs); font-size: var(--fs-xs); color: var(--color-text-muted);">
+                <strong>Architecture:</strong> Monorepo with React 19, TypeScript, Vite, Tailwind CSS, Framer Motion, Node.js Express server, Prisma ORM, SQLite database, and Pinecone vector search.
+              </div>
+              <div style="margin-block-end: var(--space-md); font-size: var(--fs-xs); color: var(--color-text-muted);">
+                <strong>Core Features:</strong> Multi-model selection (Gemini Pro, GPT-4o, Claude 3.5), document upload parsing (PDF, DOCX, XLSX), conversation management with pin/export, and secure JWT authentication.
+              </div>
+              <ul class="project-card__tech" aria-label="Technologies used in NexusAI">
+                <li class="project-card__tag">React 19</li>
+                <li class="project-card__tag">TypeScript</li>
+                <li class="project-card__tag">Express.js</li>
+                <li class="project-card__tag">Prisma ORM</li>
+                <li class="project-card__tag">SQLite</li>
+                <li class="project-card__tag">Tailwind CSS</li>
+              </ul>
+              <div class="project-card__actions">
+                <span style="font-size: var(--fs-xs); color: var(--color-text-muted);">Full-Stack Local Codebase</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 5: SHIKSHA SAATHI -->
+          <article class="project-card" id="project-shiksha-saathi" data-category="web-apps">
+            <figure class="project-card__figure">
+              <img src="assets/images/shiksha-saathi.png" alt="Shiksha Saathi opening interface showing private browser-based guidance and emergency help pathways" width="1024" height="492" loading="lazy">
+              <figcaption class="sr-only">Shiksha Saathi opening interface</figcaption>
+            </figure>
+            <div class="project-card__body">
+              <span class="project-card__status project-card__status--prototype">
+                <span class="project-card__status-dot" aria-hidden="true"></span>
+                Browser-Side Prototype
+              </span>
+              <h3 class="project-card__title">Shiksha Saathi</h3>
+              <p class="project-card__desc">
+                A privacy-conscious web platform designed to provide support resources, verified helplines, and informational rights education for girls and women in India facing marriage pressure.
+              </p>
+              <div style="margin-block-end: var(--space-xs); font-size: var(--fs-xs); color: var(--color-text-muted);">
+                <strong>Implemented Features:</strong> Bilingual support (English and Hindi), zero-backend architecture to prevent server tracking, accessible helpline directories, and emergency quick-exit triggers.
+              </div>
+              <div style="margin-block-end: var(--space-md); font-size: var(--fs-xs); color: var(--color-text-muted);">
+                <strong>Disclaimer:</strong> An educational and awareness-building project; does not provide certified legal counsel or official government services.
+              </div>
+              <ul class="project-card__tech" aria-label="Technologies used in Shiksha Saathi">
+                <li class="project-card__tag">HTML5</li>
+                <li class="project-card__tag">CSS3</li>
+                <li class="project-card__tag">Vanilla JavaScript</li>
+                <li class="project-card__tag">Privacy Design</li>
+              </ul>
+              <div class="project-card__actions">
+                <span style="font-size: var(--fs-xs); color: var(--color-text-muted);">Client-Side Web Codebase</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Transparency & Status Policy Notice -->
+      <aside aria-labelledby="projects-policy-heading">
+        <div class="aside-callout">
+          <h2 id="projects-policy-heading" class="aside-callout__title">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+            </svg>
+            Evidence-Based Project Presentation Policy
+          </h2>
+          <p>
+            In strict compliance with factual reporting, every project above is presented based on verified source code and genuine problem statements. Implemented modules are clearly distinguished from planned or proposed features. Known architectural considerations, security learnings, and academic contexts are disclosed openly without artificial metrics or exaggerated claims.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Site Footer Landmark -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <h3 class="site-footer__title">Akash Rai</h3>
+          <p>
+            Student Developer &bull; B.Tech in CSE (AI/ML) &bull; Chhattisgarh Swami Vivekanand Technical University (CSVTU), Bhilai.
+          </p>
+        </div>
+
+        <nav class="site-footer__nav" aria-label="Footer Quick Links">
+          <h4 class="site-footer__nav-title">Navigation</h4>
+          <ul class="site-footer__list">
+            <li><a href="index.html" class="site-footer__link">Home</a></li>
+            <li><a href="about.html" class="site-footer__link">About Me</a></li>
+            <li><a href="skills.html" class="site-footer__link">Skills</a></li>
+            <li><a href="projects.html" class="site-footer__link" aria-current="page">Projects</a></li>
+            <li><a href="contact.html" class="site-footer__link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <h4 class="site-footer__nav-title">Connect</h4>
+          <address class="contact-address">
+            <p><a href="mailto:akashrai34558@gmail.com" class="site-footer__link">akashrai34558@gmail.com</a></p>
+            <p><a href="https://github.com/pycoderakash" class="site-footer__link" target="_blank" rel="noopener noreferrer">GitHub Profile <span class="sr-only">(opens in new tab)</span></a></p>
+            <p><a href="https://www.linkedin.com/in/akash-rai-3927593b9" class="site-footer__link" target="_blank" rel="noopener noreferrer">LinkedIn Profile <span class="sr-only">(opens in new tab)</span></a></p>
+          </address>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p>&copy; 2026 Akash Rai. Built strictly with semantic HTML5, CSS3, and vanilla JavaScript. WCAG 2.2 Level AA compliant.</p>
+        <a href="#main-content" class="back-to-top">
+          <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+          </svg>
+          Back to top
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
