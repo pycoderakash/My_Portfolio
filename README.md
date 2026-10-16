@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Akash Rai &mdash; Personal Portfolio Website
 
 [![WCAG 2.2 AA](https://img.shields.io/badge/WCAG-2.2%20Level%20AA-success?style=flat-square)](https://www.w3.org/WAI/standards-guidelines/wcag/)
@@ -242,3 +243,7 @@ The test suite validates:
 ---
 
 &copy; 2026 Akash Rai. Built with semantic HTML5, CSS3, and vanilla JavaScript.
+=======
+# My_Portfolio
+Personal portfolio website showcasing my skills, projects, and learning journey in Python, Artificial Intelligence, Machine Learning, and Web Development. Built with semantic HTML5, CSS3, and JavaScript, with a focus on accessibility, responsive design, and SEO.
+>>>>>>> 36e70b6a6607cbf749bc078a39b4ab8846a0aa1e
