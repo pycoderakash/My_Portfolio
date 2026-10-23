@@ -1,36 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
+<!--
   XML Sitemap for Akash Rai Personal Portfolio
-  Note: Replace "https://[your-domain.com]" with your actual production domain upon deployment.
+  Base URL: https://pycoderakash.github.io/My_Portfolio
+  Note: If you deploy to a custom domain, replace the base URL in this file,
+  robots.txt, and the canonical/og:url/og:image meta tags in every HTML page.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://[your-domain.com]/index.html</loc>
-    <lastmod>2026-10-14</lastmod>
+    <loc>https://pycoderakash.github.io/My_Portfolio/index.html</loc>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://[your-domain.com]/about.html</loc>
-    <lastmod>2026-10-14</lastmod>
+    <loc>https://pycoderakash.github.io/My_Portfolio/about.html</loc>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://[your-domain.com]/skills.html</loc>
-    <lastmod>2026-10-14</lastmod>
+    <loc>https://pycoderakash.github.io/My_Portfolio/skills.html</loc>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://[your-domain.com]/projects.html</loc>
-    <lastmod>2026-10-14</lastmod>
+    <loc>https://pycoderakash.github.io/My_Portfolio/projects.html</loc>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://[your-domain.com]/contact.html</loc>
-    <lastmod>2026-10-14</lastmod>
+    <loc>https://pycoderakash.github.io/My_Portfolio/contact.html</loc>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

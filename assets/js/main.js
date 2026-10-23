@@ -19,6 +19,39 @@
   // Expose on window for programmatic access or external components
   window.portfolioProfile = Object.freeze(profile);
 
+  // Safe HTML escaper for client-rendered text (declared early for clarity)
+  function escapeHTML(str) {
+    if (str === null || str === undefined) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  // Propagate the centralized profile into any DOM element marked with
+  // data-profile-link="email" | "github" | "linkedin".
+  // Static HTML keeps working without JavaScript; this keeps them in sync
+  // with the single source of truth above.
+  function applyProfileToDOM() {
+    document.querySelectorAll('[data-profile-link]').forEach(function (el) {
+      const key = el.getAttribute('data-profile-link');
+      if (key === 'email') {
+        el.setAttribute('href', 'mailto:' + profile.email);
+        if (el.hasAttribute('data-profile-text')) {
+          el.textContent = profile.email;
+        }
+      } else if (key === 'github' && profile.github) {
+        el.setAttribute('href', profile.github);
+      } else if (key === 'linkedin' && profile.linkedin) {
+        el.setAttribute('href', profile.linkedin);
+      }
+    });
+  }
+
+  applyProfileToDOM();
+
   // ---------------------------------------------------------------------------
   // 1. Theme Management (Light / Dark with System Preference & Persistence)
   // ---------------------------------------------------------------------------
@@ -67,16 +100,32 @@
     }
   }
 
-  // Initialize theme
+  // Initialize theme with strict validation
   let savedTheme = null;
   try {
-    savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+    const stored = localStorage.getItem(THEME_STORAGE_KEY);
+    if (stored === 'dark' || stored === 'light') {
+      savedTheme = stored;
+    } else if (stored !== null) {
+      localStorage.removeItem(THEME_STORAGE_KEY);
+      savedTheme = null;
+    }
   } catch (e) {
     savedTheme = null;
   }
 
   const initialTheme = savedTheme || getSystemTheme();
   applyTheme(initialTheme, false);
+
+  // Wire Accessible 3D Animation Pause/Resume Toggle
+  const animToggleBtn = document.getElementById('animation-toggle');
+  if (animToggleBtn) {
+    animToggleBtn.addEventListener('click', function () {
+      if (typeof window.__toggleUniverseAnimation === 'function') {
+        window.__toggleUniverseAnimation();
+      }
+    });
+  }
 
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', function () {
@@ -93,7 +142,7 @@
       try {
         stored = localStorage.getItem(THEME_STORAGE_KEY);
       } catch (err) {}
-      if (!stored) {
+      if (stored !== 'dark' && stored !== 'light') {
         applyTheme(e.matches ? 'dark' : 'light', false);
       }
     });
@@ -107,8 +156,7 @@
 
   if (menuToggle && primaryNav) {
     function toggleMenu(open) {
-      const isExpanded = open !== undefined ? open : menuToggle.getAttribute('aria-expanded') === 'true';
-      const targetState = !isExpanded;
+      const targetState = open !== undefined ? open : menuToggle.getAttribute('aria-expanded') !== 'true';
 
       menuToggle.setAttribute('aria-expanded', String(targetState));
       if (targetState) {
@@ -143,9 +191,9 @@
       }
     });
 
-    // Reset mobile menu state on window resize past 768px
+    // Reset mobile menu state on window resize past 54rem (864px)
     window.addEventListener('resize', function () {
-      if (window.innerWidth >= 768 && menuToggle.getAttribute('aria-expanded') === 'true') {
+      if (window.innerWidth >= 864 && menuToggle.getAttribute('aria-expanded') === 'true') {
         toggleMenu(false);
       }
     });
@@ -202,6 +250,13 @@
   const contactForm = document.getElementById('contact-form');
 
   if (contactForm) {
+    // Progressive enhancement: the HTML form keeps native validation as the
+    // no-JavaScript fallback. Once this script initializes, take the form over
+    // with accessible custom validation (live-region summaries + focus control),
+    // otherwise native bubbles block the submit event and the handlers below
+    // would never run.
+    contactForm.noValidate = true;
+
     const nameInput = document.getElementById('user-name');
     const emailInput = document.getElementById('user-email');
     const subjectInput = document.getElementById('user-subject');
@@ -232,6 +287,9 @@
       } else if (fieldId === 'user-name' && value.length < 2) {
         isValid = false;
         errorMessage = 'Name must be at least 2 characters in length.';
+      } else if (fieldId === 'user-subject' && value.length < 3) {
+        isValid = false;
+        errorMessage = 'Subject must be at least 3 characters long.';
       } else if (fieldId === 'user-message' && value.length < 10) {
         isValid = false;
         errorMessage = 'Message must be at least 10 characters long.';
@@ -271,9 +329,44 @@
       });
     });
 
+    // Form reset handler: clear custom validation states and error messages when user clicks Reset button
+    const resetBtn = contactForm.querySelector('button[type="reset"]');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function () {
+        setTimeout(function () {
+          [nameInput, emailInput, subjectInput, messageInput].forEach(function (field) {
+            if (!field) return;
+            field.removeAttribute('aria-invalid');
+            const errorElement = document.getElementById(`${field.id}-error`);
+            if (errorElement) {
+              errorElement.textContent = '';
+              errorElement.style.display = 'none';
+            }
+          });
+          if (formStatus) {
+            formStatus.textContent = '';
+            formStatus.className = 'form-status';
+          }
+        }, 0);
+      });
+    }
+
     // Form submission handler
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
+
+      // Check anti-spam honeypot
+      const honeyInput = contactForm.querySelector('input[name="_honey"], input[name="_gotcha"]');
+      if (honeyInput && honeyInput.value.trim() !== '') {
+        // Silently drop bot submission with successful message, prevent network request
+        if (formStatus) {
+          formStatus.className = 'form-status form-status--success is-visible';
+          formStatus.innerHTML = '<strong>Thank you! Your message has been sent successfully.</strong>';
+          formStatus.focus();
+        }
+        contactForm.reset();
+        return;
+      }
 
       const isNameValid = validateField(nameInput);
       const isEmailValid = validateField(emailInput);
@@ -322,21 +415,29 @@
           message: messageInput.value.trim(),
           _captcha: 'false',
           _template: 'table',
-          _autoresponse: 'Thank you for contacting Akash Rai! I have received your message and will respond as soon as possible.'
+          _autoresponse: `Thank you for contacting ${profile.name}! I have received your message and will respond as soon as possible.`
         };
 
-        fetch('https://formsubmit.co/ajax/akashrai34558@gmail.com', {
+        // AbortController timeout so the button never hangs on "Sending..." forever
+        const controller = new AbortController();
+        const timeoutId = setTimeout(function () {
+          controller.abort();
+        }, 15000);
+
+        fetch(`https://formsubmit.co/ajax/${profile.email}`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
           },
-          body: JSON.stringify(formData)
+          body: JSON.stringify(formData),
+          signal: controller.signal
         })
           .then(function (res) {
             return res.json();
           })
           .then(function (data) {
+            clearTimeout(timeoutId);
             if (submitBtn) {
               submitBtn.disabled = false;
               submitBtn.innerHTML = originalBtnHTML;
@@ -347,7 +448,7 @@
                 formStatus.className = 'form-status form-status--success is-visible';
                 formStatus.innerHTML = `
                   <strong>Thank you, ${escapeHTML(formData.name)}! Your message has been sent successfully.</strong>
-                  <p>Your message was delivered directly to Akash's email inbox (<strong>akashrai34558@gmail.com</strong>). I will review your message and reply to <strong>${escapeHTML(formData.email)}</strong> shortly.</p>
+                  <p>Your message was transmitted to FormSubmit for delivery to Akash's email inbox (<strong>${escapeHTML(profile.email)}</strong>). I will review your message and reply to <strong>${escapeHTML(formData.email)}</strong> shortly.</p>
                 `;
                 formStatus.focus();
               }
@@ -362,7 +463,7 @@
                 formStatus.className = 'form-status form-status--success is-visible';
                 formStatus.innerHTML = `
                   <strong>One-Time Activation Required!</strong>
-                  <p>FormSubmit has sent an activation confirmation email to <strong>akashrai34558@gmail.com</strong>. Please check your inbox and click <em>'Activate Form'</em> to complete setup.</p>
+                  <p>FormSubmit has sent an activation confirmation email to <strong>${escapeHTML(profile.email)}</strong>. Please check your inbox and click <em>'Activate Form'</em> to complete setup.</p>
                 `;
                 formStatus.focus();
               }
@@ -371,22 +472,28 @@
             }
           })
           .catch(function (error) {
+            clearTimeout(timeoutId);
+
             if (submitBtn) {
               submitBtn.disabled = false;
               submitBtn.innerHTML = originalBtnHTML;
             }
 
-            const mailtoFallback = `mailto:akashrai34558@gmail.com?subject=${encodeURIComponent(
+            const mailtoFallback = `mailto:${profile.email}?subject=${encodeURIComponent(
               formData._subject
             )}&body=${encodeURIComponent(
               `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
             )}`;
 
+            const failureMessage = error && error.name === 'AbortError'
+              ? 'The request timed out before FormSubmit responded. Please try again, or use the email button below.'
+              : (error.message || 'Unable to transmit directly over the network.');
+
             if (formStatus) {
               formStatus.className = 'form-status form-status--error is-visible';
               formStatus.innerHTML = `
                 <strong>Message Delivery Notice</strong>
-                <p>${escapeHTML(error.message || 'Unable to transmit directly over the network.')}</p>
+                <p>${escapeHTML(failureMessage)}</p>
                 <p style="margin-block-start: var(--space-xs);">
                   You can send your message directly to Akash via your email client:
                 </p>
@@ -401,16 +508,6 @@
           });
       }
     });
-  }
-
-  // Safe HTML escaper for client-rendered text
-  function escapeHTML(str) {
-    return str
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#039;');
   }
 
   // ---------------------------------------------------------------------------

@@ -2,6 +2,8 @@
 User-agent: *
 Allow: /
 
-# Sitemap Location (Update [your-domain.com] with your production domain upon deployment)
-# Example: Sitemap: https://[your-domain.com]/sitemap.xml
-Sitemap: sitemap.xml
+# Sitemap Location
+# Base URL: https://pycoderakash.github.io/My_Portfolio
+# If you deploy to a custom domain, update this file, sitemap.xml, and the
+# canonical/og:url/og:image meta tags in every HTML page.
+Sitemap: https://pycoderakash.github.io/My_Portfolio/sitemap.xml

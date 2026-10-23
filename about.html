@@ -6,22 +6,42 @@
   <title>About Akash Rai | Student Developer &bull; B.Tech CSE (AI/ML)</title>
   <meta name="description" content="Learn about Akash Rai, a B.Tech CSE (AI/ML) student at CSVTU Bhilai, focusing on Python, AI/ML development, Generative AI workflows, and software engineering.">
   <meta name="author" content="Akash Rai">
+  <link rel="canonical" href="https://pycoderakash.github.io/My_Portfolio/about.html">
 
   <!-- Open Graph / Social Metadata -->
   <meta property="og:title" content="About Akash Rai | Student Developer &bull; B.Tech CSE (AI/ML)">
   <meta property="og:description" content="Background, educational context at CSVTU Bhilai, technical interests, and development philosophy of Akash Rai.">
   <meta property="og:type" content="profile">
-  <meta property="og:image" content="assets/images/Akash_rai.jpeg">
+  <meta property="og:url" content="https://pycoderakash.github.io/My_Portfolio/about.html">
+  <meta property="og:site_name" content="Akash Rai Portfolio">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://pycoderakash.github.io/My_Portfolio/assets/images/Akash_rai.jpeg">
 
   <!-- Twitter Metadata -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="About Akash Rai | Student Developer">
   <meta name="twitter:description" content="Academic context, technical interests in Python, AI/ML, and software engineering.">
-  <meta name="twitter:image" content="assets/images/Akash_rai.jpeg">
+  <meta name="twitter:image" content="https://pycoderakash.github.io/My_Portfolio/assets/images/Akash_rai.jpeg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
   <link rel="apple-touch-icon" href="assets/icons/logo.jpeg">
+
+  <!-- Early Theme Initialization to Prevent FOUC / Theme Flash -->
+  <script>
+    (function () {
+      try {
+        var s = localStorage.getItem('portfolio-theme-preference');
+        var theme = (s === 'dark' || s === 'light')
+          ? s
+          : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        var fallback = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', fallback);
+      }
+    })();
+  </script>
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="assets/css/styles.css">
@@ -35,7 +55,7 @@
       "@type": "Person",
       "name": "Akash Rai",
       "jobTitle": "Student Developer",
-      "email": "mailto:akashrai34558@gmail.com",
+      "email": "akashrai34558@gmail.com",
       "sameAs": [
         "https://github.com/pycoderakash",
         "https://www.linkedin.com/in/akash-rai-3927593b9"
@@ -53,6 +73,11 @@
   <!-- Skip Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
+  <!-- Global 3D Programming Universe Canvas Background -->
+  <div class="site-bg-canvas-container hero__canvas-container" id="hero-3d-container" aria-hidden="true">
+    <canvas id="hero-3d-canvas" class="site-bg-canvas hero__canvas"></canvas>
+  </div>
+
   <!-- Site Header Landmark -->
   <header class="site-header">
     <div class="container site-header__container">
@@ -66,11 +91,22 @@
 
       <div class="header-actions">
         <!-- Theme Toggle Button -->
-        <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Switch to dark theme (currently light)">
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Toggle color theme">
           <svg class="theme-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18">
             <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z" fill="currentColor"/>
           </svg>
           <span class="theme-toggle__text">Dark Mode</span>
+        </button>
+        <!-- Accessible 3D Animation Pause/Resume Control -->
+        <button type="button" id="animation-toggle" class="theme-toggle animation-toggle-btn" aria-pressed="false" aria-label="Pause 3D background animation" title="Pause 3D animation (Shortcut: P)">
+          <svg class="anim-icon anim-icon--pause" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16">
+            <rect x="6" y="4" width="4" height="16" rx="1" fill="currentColor"/>
+            <rect x="14" y="4" width="4" height="16" rx="1" fill="currentColor"/>
+          </svg>
+          <svg class="anim-icon anim-icon--play" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16" style="display: none;">
+            <path d="M8 5v14l11-7z" fill="currentColor"/>
+          </svg>
+          <span class="anim-toggle__text">Pause</span>
         </button>
 
         <!-- Responsive Mobile Navigation Toggle -->
@@ -294,9 +330,9 @@
         <div>
           <h4 class="site-footer__nav-title">Connect</h4>
           <address class="contact-address">
-            <p><a href="mailto:akashrai34558@gmail.com" class="site-footer__link">akashrai34558@gmail.com</a></p>
-            <p><a href="https://github.com/pycoderakash" class="site-footer__link" target="_blank" rel="noopener noreferrer">GitHub Profile <span class="sr-only">(opens in new tab)</span></a></p>
-            <p><a href="https://www.linkedin.com/in/akash-rai-3927593b9" class="site-footer__link" target="_blank" rel="noopener noreferrer">LinkedIn Profile <span class="sr-only">(opens in new tab)</span></a></p>
+            <p><a href="mailto:akashrai34558@gmail.com" class="site-footer__link" data-profile-link="email" data-profile-text>akashrai34558@gmail.com</a></p>
+            <p><a href="https://github.com/pycoderakash" class="site-footer__link" data-profile-link="github" target="_blank" rel="noopener noreferrer">GitHub Profile <span class="sr-only">(opens in new tab)</span></a></p>
+            <p><a href="https://www.linkedin.com/in/akash-rai-3927593b9" class="site-footer__link" data-profile-link="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn Profile <span class="sr-only">(opens in new tab)</span></a></p>
           </address>
         </div>
       </div>
@@ -315,5 +351,8 @@
 
   <!-- Scripts -->
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/three.min.js" defer></script>
+  <script src="assets/js/GLTFLoader.js" defer></script>
+  <script src="assets/js/3d-universe.js" defer></script>
 </body>
 </html>
